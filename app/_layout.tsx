@@ -13,7 +13,6 @@ import { Platform } from "react-native";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import KeyboardAvoiding from "~/providers/KeyboardAvoiding";
 import { I18nextProvider } from "react-i18next";
 import i18n from "~/i18n";
 
@@ -57,14 +56,12 @@ export default function RootLayout() {
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
       <I18nextProvider i18n={i18n}>
         <SafeAreaProvider>
-          <KeyboardAvoiding>
-            <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-            <Stack
-              screenOptions={{
-                headerShown: false,
-              }}
-            />
-          </KeyboardAvoiding>
+          <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+          <Stack
+            screenOptions={{
+              headerShown: false,
+            }}
+          />
         </SafeAreaProvider>
       </I18nextProvider>
     </ThemeProvider>

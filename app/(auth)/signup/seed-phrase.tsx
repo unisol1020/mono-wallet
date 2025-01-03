@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -10,9 +10,9 @@ import ethereum from "~/services/ethereum";
 
 export default function SeedPhraseScreen() {
   const { t } = useTranslation("generateSeedPhrase");
-  const [mnemonic] = useState<string[]>(() => {
-    return ethereum.createWallet().mnemonic?.phrase.split(" ") ?? [];
-  });
+  const mnemonic = useMemo(() => {
+    return ethereum.createWallet().mnemonic?.phrase?.split(" ") ?? [];
+  }, []);
 
   return (
     <SafeAreaView>
