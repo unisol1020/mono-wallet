@@ -1,5 +1,7 @@
+import { HDNodeWallet } from "ethers";
+
 export interface CryptoService {
-  restoreWalletFromPhrase(): Promise<string>;
+  restoreWalletFromPhrase(mnemonicPhrase: string): HDNodeWallet;
   sendTransaction(): Promise<string>;
   calculateGasAndAmounts(): Promise<string>;
 }

@@ -41,7 +41,7 @@ export default function LoginScreen() {
           <View className="flex flex-row items-center">
             <Lead>{t("dontHaveAccount.title")}</Lead>
 
-            <Link href="/signup" replace asChild>
+            <Link href="/create" replace asChild>
               <Button variant="link">
                 <Text>{t("dontHaveAccount.button")}</Text>
               </Button>

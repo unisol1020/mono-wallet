@@ -23,7 +23,7 @@ export default function SeedPhraseScreen() {
         </View>
 
         <View className="flex flex-row flex-wrap gap-3 justify-center">
-          {mnemonic.map((word, index) => (
+          {mnemonic?.map((word, index) => (
             <Badge variant="secondary" key={word}>
               <View className="flex flex-row gap-1">
                 <Large className="text-gray-400">{index + 1 + ". "}</Large>
